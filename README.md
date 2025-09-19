@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+🚀 One-Click Bitcoin Yield Shuttle
 
-## Project info
+Track: Bitcoin Unleashed
+Problem: Most BTC sits idle. Moving it into DeFi involves multiple high-friction steps.
+Solution: A one-click app that accepts native BTC (L1 or Lightning), bridges it to Starknet, and deploys into a yield protocol automatically.
 
-**URL**: https://lovable.dev/projects/27dac932-cf7c-4738-b360-bc481a6194e1
+⸻
 
-## How can I edit this code?
+✨ Features
+	•	Seamless Wallet Integration — Connect with Xverse Wallet for native BTC support.
+	•	Cross-Chain Bridge — Powered by Atomiq SDK to convert BTC → WBTC on Starknet.
+	•	Automatic Yield Deployment — Smart contracts written in Cairo route assets into:
+	•	Troves / Endur yield vaults (aggregator option)
+	•	Vesu lending pools (lending option)
+	•	One-Click UX — Deposit BTC, see yield accrual instantly.
 
-There are several ways of editing your application.
+⸻
 
-**Use Lovable**
+🛠️ Tech Stack
+	•	Frontend: React / Next.js
+	•	Wallet: Xverse Wallet SDK
+	•	Bridge: Atomiq SDK
+	•	Smart Contracts: Cairo on Starknet
+	•	Yield Protocols: Troves, Endur, Vesu
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/27dac932-cf7c-4738-b360-bc481a6194e1) and start prompting.
+⸻
 
-Changes made via Lovable will be committed automatically to this repo.
+📐 Architecture Overview
+	1.	User connects BTC wallet via Xverse.
+	2.	User clicks “One-Click Shuttle.”
+	3.	BTC bridges to Starknet WBTC via Atomiq SDK.
+	4.	Smart contract auto-deposits into yield protocol.
+	5.	User dashboard shows yield position + balance.
 
-**Use your preferred IDE**
+⸻
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🚧 Project Structure
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+zap-btc/
+├── frontend/         # Next.js UI, wallet integration, bridge calls
+├── contracts/        # Cairo smart contracts for yield deposit
+├── backend/          # Optional Node.js orchestration layer
+└── README.md
 
-Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+⸻
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+✅ Setup & Run
 
-# Step 3: Install the necessary dependencies.
-npm i
+Frontend
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+cd frontend
+npm install
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+Contracts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+cd contracts
+scarb build
+scarb test
 
-**Use GitHub Codespaces**
+Deploy to Starknet testnet:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+scarb cairo-run --contract ZapBtc.cairo
 
-## What technologies are used for this project?
 
-This project is built with:
+⸻
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+📋 Hackathon Roadmap
+	•	Wallet connect with Xverse
+	•	Frontend scaffold (React/Next.js)
+	•	Atomiq bridge integration (mock if needed)
+	•	Cairo contract: deposit, withdraw, get_user_position
+	•	Connect frontend to Starknet contract
+	•	Yield protocol integration (Troves or Vesu)
+	•	Demo polish: landing page, fake APY chart
 
-## How can I deploy this project?
+⸻
 
-Simply open [Lovable](https://lovable.dev/projects/27dac932-cf7c-4738-b360-bc481a6194e1) and click on Share -> Publish.
+🎯 Potential Outcome
 
-## Can I connect a custom domain to my Lovable project?
+A seamless BTC → DeFi yield app that reduces onboarding friction to a single click.
+Post-hackathon, this project could be extended into a production-ready protocol and is a strong candidate for a Starknet Foundation grant.
 
-Yes, you can!
+⸻
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+🙌 Sponsors & Thanks
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Special thanks to:
+Starkware, Starknet Foundation, Xverse, Atomiq, Troves, Endur, Vesu
